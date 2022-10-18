@@ -1,0 +1,29 @@
+<section class="example-section">
+  <mat-slide-toggle
+    class="example-margin"
+    [checked]="hideCustomersWithoutContract"
+    (click)="toggleCustomers()"
+    >Show only with contract</mat-slide-toggle
+  >
+</section>
+
+<div class="container">
+  <ul class="customers">
+    <li *ngFor="let cust of customers">
+      <a routerLink="/customer/{{ cust.id }}" title="Show Details" [ngClass]="{'highlighted':cust.sameBirthMonth}">
+        <span class="badge">{{ cust.id }}</span> {{ cust.firstName }}
+        {{ cust.lastName }}
+        <mat-icon *ngIf="cust.sameBirthMonth">cake</mat-icon>
+      </a>
+
+      <button
+        mat-icon-button
+        class="delete"
+        title="Delete customer"
+        (click)="deleteCustomer(cust.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>
