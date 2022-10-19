@@ -6,6 +6,9 @@ import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatCardModule } from '@angular/material/card'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   imports: [
@@ -15,7 +18,10 @@ import { MatCardModule } from '@angular/material/card'
     MatTableModule,
     MatIconModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MatListModule,
@@ -24,7 +30,10 @@ import { MatCardModule } from '@angular/material/card'
     MatTableModule,
     MatIconModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
 
   providers: [],

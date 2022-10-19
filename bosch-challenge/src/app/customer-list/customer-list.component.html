@@ -5,12 +5,33 @@
     (click)="toggleCustomers()"
     >Show only with contract</mat-slide-toggle
   >
+  <span style="flex: 1 1 auto"></span>
+  <button
+    mat-icon-button
+    (click)="getCustomers()"
+    title="Refresh list"
+    style="margin-left: 20px"
+  >
+    <mat-icon>refresh</mat-icon>
+  </button>
 </section>
+
+<form class="form">
+  <mat-form-field appearance="fill" class="form-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput type="text" [(ngModel)]="searchText" name="search" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</form>
 
 <div class="container">
   <ul class="customers">
-    <li *ngFor="let cust of customers">
-      <a routerLink="/customer/{{ cust.id }}" title="Show Details" [ngClass]="{'highlighted':cust.sameBirthMonth}">
+    <li *ngFor="let cust of customers | filter: searchText">
+      <a
+        routerLink="/customer/{{ cust.id }}"
+        title="Show Details"
+        [ngClass]="{ highlighted: cust.sameBirthMonth }"
+      >
         <span class="badge">{{ cust.id }}</span> {{ cust.firstName }}
         {{ cust.lastName }}
         <mat-icon *ngIf="cust.sameBirthMonth">cake</mat-icon>

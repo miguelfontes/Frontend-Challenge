@@ -14,6 +14,7 @@ export class CustomerListComponent implements OnInit {
   hideCustomersWithoutContract: boolean = false;
   todayDate: Date = new Date();
   currentMonth: number;
+  searchText:string = "";
 
   constructor(private customerService: CustomerService) {
     this.currentMonth = this.todayDate.getMonth() + 1;

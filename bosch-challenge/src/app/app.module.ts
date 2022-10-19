@@ -9,19 +9,23 @@ import { MaterialModule } from './material.module';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerService } from './customer.service';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerDetailsComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
