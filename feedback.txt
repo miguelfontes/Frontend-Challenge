@@ -1,0 +1,19 @@
+- Information needed to properly interact with your code
+	- To install dependencies, run npm install
+	- To run the application, run ng serve. It will run by default in the port 4200
+
+- If a few more hours where given to improve the challenge, what you would work on next and why?
+	- I would style it better and probably change the display of the customers to a material design table.
+
+- What decision points you came across and any assumptions you made in your implementation?
+	- I decided to create a component for the customers list, which displays their id and name. I assumed that this information is the most relevant for an initial page.
+	Then, to show the properties of a customer I created a component that displays the avatar, email and birthday. To access the details, I implemented a route with the id of the customer
+	and it makes a request to the API with the id passed in the query parameter.
+	To do the search, i created a pipe that returns an array of customers that matches the search text in the input.
+	I added the cake icon in the customer list page and highlighted the customer line with a strong color. Don't know if it should be done in the customer details page.
+	
+- Any questions you would ask if this was a real-world scenario?
+	- Could I use Material Design or Bootstrap?
+	- If the customer information is to be shown in a different page, in a dialog or below the name of the customer;
+	- If I could use a third party package to do the search or the pagination;
+	- How would the data be displayed (in a grid, table, list)?
